@@ -1,5 +1,5 @@
 # 1 Підносить число до квадрату
-square = lambda x: x ** 2
+square = lambda x: x**2
 
 # 2 Повертає периметр трикутника за сторонами a, b, c
 perimeter = lambda a, b, c: a + b + c
@@ -11,18 +11,14 @@ format_name = lambda first_name, last_name: f"{last_name}, {first_name}"
 is_even = lambda x: x % 2 == 0
 
 
-print(square(5))                   # 25
-print(perimeter(3, 4, 5)) # 12
+print(square(5))  # 25
+print(perimeter(3, 4, 5))  # 12
 print(format_name("Віктор", "Бодашко"))
-print(is_even(8))                   # True
-print(is_even(7))                   # False
+print(is_even(8))  # True
+print(is_even(7))  # False
 
 
-
-from typing import List
-
-
-def get_positive_numbers(numbers: List[float]) -> List[float]:
+def get_positive_numbers(numbers: list[float]) -> list[float]:
     """
     Повертає список лише додатніх чисел, використовуючи filter().
 
@@ -31,11 +27,12 @@ def get_positive_numbers(numbers: List[float]) -> List[float]:
     """
     return list(filter(lambda x: x > 0, numbers))
 
+
 nums = [-5, 0, 3.2, 7, -1]
 print(get_positive_numbers(nums))  # Виведе: [3.2, 7]
 
 
-def filter_long_words(words: List[str]) -> List[str]:
+def filter_long_words(words: list[str]) -> list[str]:
     """
     Повертає список слів, у яких більше ніж 3 літери, використовуючи filter().
 
@@ -44,11 +41,12 @@ def filter_long_words(words: List[str]) -> List[str]:
     """
     return list(filter(lambda word: len(word) > 3, words))
 
+
 words = ["cat", "house", "sun", "tree", "a"]
 print(filter_long_words(words))  # Виведе: ['house', 'tree']
 
 
-def filter_words_by_letter(words: List[str], letter: str) -> List[str]:
+def filter_words_by_letter(words: list[str], letter: str) -> list[str]:
     """
     Повертає список слів, які починаються на вказану літеру (регістр неважливий),
     використовуючи filter().
@@ -60,15 +58,19 @@ def filter_words_by_letter(words: List[str], letter: str) -> List[str]:
     normalized_letter = letter.lower()
     return list(filter(lambda word: word.lower().startswith(normalized_letter), words))
 
+
 words = ["Apple", "apricot", "banana", "Avocado", "berry"]
 print(filter_words_by_letter(words, "a"))  # Виведе: ['Apple', 'apricot', 'Avocado']
 
 
 import time
-from typing import Callable, Any
+from collections.abc import Callable
+from typing import Any
 
 
-def measure_execution_time(func: Callable[..., Any], *args: Any, **kwargs: Any) -> float:
+def measure_execution_time(
+    func: Callable[..., Any], *args: Any, **kwargs: Any
+) -> float:
     """
     Вимірює час виконання переданої функції в секундах.
 
@@ -85,6 +87,7 @@ def measure_execution_time(func: Callable[..., Any], *args: Any, **kwargs: Any) 
 
 # Приклад використання (для тесту):
 
+
 def example_function(n: int) -> int:
     """
     Приклад функції, для якої ми будемо вимірювати час виконання.
@@ -98,12 +101,12 @@ def example_function(n: int) -> int:
         total += i
     return total
 
+
 execution_time = measure_execution_time(example_function, 2)
 print(f"Час виконання: {execution_time:.3f} секунд")
 
 
-
-def sort_by_last_letter(words: List[str]) -> List[str]:
+def sort_by_last_letter(words: list[str]) -> list[str]:
     """
     Сортує список слів за останньою літерою.
 
@@ -112,11 +115,12 @@ def sort_by_last_letter(words: List[str]) -> List[str]:
     """
     return sorted(words, key=lambda word: word[-1])
 
+
 words = ["apple", "banana", "cherry", "date"]
 print(sort_by_last_letter(words))
 
 
-def sort_numbers_by_digit_count(numbers: List[int]) -> List[int]:
+def sort_numbers_by_digit_count(numbers: list[int]) -> list[int]:
     """
     Сортує список чисел за кількістю цифр.
 
@@ -125,11 +129,12 @@ def sort_numbers_by_digit_count(numbers: List[int]) -> List[int]:
     """
     return sorted(numbers, key=lambda num: len(str(abs(num))))
 
+
 numbers = [1, 23, 456, -7, 89, -1234]
 print(sort_numbers_by_digit_count(numbers))
 
 
-def find_closest_number(numbers: List[float], target: float) -> float:
+def find_closest_number(numbers: list[float], target: float) -> float:
     """
     Повертає число зі списку, яке найближче до заданого.
 
@@ -139,12 +144,13 @@ def find_closest_number(numbers: List[float], target: float) -> float:
     """
     return min(numbers, key=lambda num: abs(num - target))
 
+
 numbers = [10.5, 3.2, 7.8, 4.4]
 target = 5
 print(find_closest_number(numbers, target))
 
 
-def find_shortest_word(words: List[str]) -> str:
+def find_shortest_word(words: list[str]) -> str:
     """
     Повертає слово з найменшою довжиною зі списку.
 
@@ -153,11 +159,12 @@ def find_shortest_word(words: List[str]) -> str:
     """
     return min(words, key=len)
 
+
 words = ["apple", "to", "banana", "a", "pear"]
 print(find_shortest_word(words))
 
 
-def sort_numbers_by_digits_then_value(numbers: List[int]) -> List[int]:
+def sort_numbers_by_digits_then_value(numbers: list[int]) -> list[int]:
     """
     Сортує числа спочатку за кількістю цифр, а при рівній кількості — за значенням.
 
@@ -166,7 +173,6 @@ def sort_numbers_by_digits_then_value(numbers: List[int]) -> List[int]:
     """
     return sorted(numbers, key=lambda num: (len(str(abs(num))), num))
 
+
 numbers = [1, 23, 4, 456, -12, 89, -7]
 print(sort_numbers_by_digits_then_value(numbers))
-
-
