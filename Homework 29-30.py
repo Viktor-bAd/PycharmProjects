@@ -25,6 +25,7 @@ students = [
     {"name": "Максим", "age": 20, "avg": 60, "has_debt": False},
 ]
 
+
 def make_student_filter(min_avg, max_age, no_debts_only=True, name_startswith=None):
     def predicate(student):
         if student["avg"] < min_avg:
@@ -33,14 +34,17 @@ def make_student_filter(min_avg, max_age, no_debts_only=True, name_startswith=No
             return False
         if no_debts_only and student["has_debt"]:
             return False
-        if name_startswith is not None and not student["name"].startswith(name_startswith):
+        if name_startswith is not None and not student["name"].startswith(
+            name_startswith
+        ):
             return False
         return True
+
     return predicate
 
+
 filtered_students = filter(
-    make_student_filter(min_avg=80, max_age=18, no_debts_only=True),
-    students
+    make_student_filter(min_avg=80, max_age=18, no_debts_only=True), students
 )
 
 names = []
@@ -54,14 +58,18 @@ print(names)
 
 nums = [1, -2, 3, 0, 4, -5, 10, 11, 12]
 
+
 def only_positive(x):
     return x > 0
+
 
 def only_even(x):
     return x % 2 == 0
 
+
 def square(x):
     return x * x
+
 
 def apply_pipeline(data, steps):
     result = data
@@ -74,11 +82,8 @@ def apply_pipeline(data, steps):
             raise ValueError("Невідомий тип кроку")
     return result
 
-pipeline = [
-    ("filter", only_positive),
-    ("filter", only_even),
-    ("map", square)
-]
+
+pipeline = [("filter", only_positive), ("filter", only_even), ("map", square)]
 
 positive = apply_pipeline(nums, [("filter", only_positive)])
 print("Позитивні:", positive)

@@ -16,7 +16,9 @@ def report_for_tax(func):
             f"Tax Rate: {data[5]}\n"
             f"Net Profit: {data[6]}"
         )
+
     return wrapper
+
 
 def report_for_ministry(func):
     def wrapper(*args, **kwargs):
@@ -25,7 +27,9 @@ def report_for_ministry(func):
             f"[MINISTRY REPORT]\n"
             f"Year: {data[0]} | Income: {data[1]} | Expenses: {data[2]} | Net Profit: {data[6]}"
         )
+
     return wrapper
+
 
 def report_for_statistics(func):
     def wrapper(*args, **kwargs):
@@ -34,8 +38,9 @@ def report_for_statistics(func):
             "year": data[0],
             "income": data[1],
             "expenses": data[2],
-            "profit": data[3]
+            "profit": data[3],
         }
+
     return wrapper
 
 
@@ -65,6 +70,7 @@ def statistics_report(year, income, expenses, tax_rate):
 def tax_report(year, income, expenses, tax_rate):
     return build_finance_report(year, income, expenses, tax_rate)
 
+
 def main():
     year = 2026
     income = 1_500_000
@@ -90,6 +96,7 @@ if __name__ == "__main__":
 
 import datetime
 
+
 def audit(func):
     def wrapper(user, target, value=None):
         timestamp = datetime.datetime.now()  # поточний час
@@ -102,6 +109,7 @@ def audit(func):
         print(timestamp, user, func.__name__, target, value)
 
         return result
+
     return wrapper
 
 
@@ -110,20 +118,24 @@ def create_data(user, data_name, value):
     print(user, "створив", data_name, "зі значенням", value)
     return True
 
+
 @audit
 def delete_data(user, data_name):
     print(user, "видалив", data_name)
     return True
+
 
 @audit
 def update_data(user, data_name, new_value):
     print(user, "оновив", data_name, "на", new_value)
     return True
 
+
 def main():
     create_data("Alice", "balance", 1000)
     delete_data("Bob", "old_report")
     update_data("Charlie", "balance", 1200)
+
 
 if __name__ == "__main__":
     main()
@@ -131,6 +143,7 @@ if __name__ == "__main__":
 # Завдання 3
 
 import time
+
 
 # Декоратор для обмеження частоти
 def rate_limit(max_calls, period_seconds):
@@ -146,19 +159,19 @@ def rate_limit(max_calls, period_seconds):
             if user not in call_times:
                 call_times[user] = []
 
-
             call_times[user] = [t for t in call_times[user] if now - t < period_seconds]
 
             if len(call_times[user]) >= max_calls:
                 print(user, "перевищив ліміт викликів для", func.__name__)
                 return None
 
-
             call_times[user].append(now)
 
             #
             return func(user, *args)
+
         return wrapper
+
     return decorator
 
 
@@ -166,6 +179,7 @@ def rate_limit(max_calls, period_seconds):
 def get_data(user, data_name):
     print(user, "отримав дані", data_name)
     return f"Data for {data_name}"
+
 
 @rate_limit(max_calls=1, period_seconds=10)  # не більше 1 виклику за 10 секунд
 def update_data(user, data_name, value):
@@ -183,6 +197,7 @@ def main():
 
     time.sleep(5)
     get_data("Alice", "balance")  # працює знову
+
 
 if __name__ == "__main__":
     main()

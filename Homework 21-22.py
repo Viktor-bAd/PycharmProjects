@@ -6,9 +6,9 @@ import re
 
 text = input("Введіть текст: ")
 symbols = input("Введіть символи: ")
-pattern = r'\b\w*[' + re.escape(symbols) + r']\w*\b'
-result = re.sub(pattern, '', text)
-result = ' '.join(result.split())
+pattern = r"\b\w*[" + re.escape(symbols) + r"]\w*\b"
+result = re.sub(pattern, "", text)
+result = " ".join(result.split())
 print("Результат:", result)
 # Завдання 2
 # Створіть програму, яка із введеного тексту створює "зворотний текст"
@@ -19,7 +19,7 @@ text = input("Введіть текст: ")
 
 words = text.split()
 words.reverse()
-reversed_text = ' '.join(words)
+reversed_text = " ".join(words)
 print(reversed_text)
 
 
@@ -39,7 +39,7 @@ print(reversed_text)
 #
 # NO якщо невалідний
 identifier = input("Введіть рядок: ")
-pattern = r'^[A-Za-z_][A-Za-z0-9_]{0,19}$'
+pattern = r"^[A-Za-z_][A-Za-z0-9_]{0,19}$"
 if re.match(pattern, identifier):
     print("OK")
 else:

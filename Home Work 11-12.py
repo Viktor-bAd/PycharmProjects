@@ -4,7 +4,7 @@
 number = float(input("Введіть число: "))
 exponent = int(input("Ваш вибір (0-7): "))
 if 0 <= exponent <= 7:
-    result = number ** exponent
+    result = number**exponent
     print(f"Результат: {number} у ступені {exponent} = {result}")
 else:
     print("Помилка: ви обрали ступінь поза межами дозволеного.")
@@ -202,4 +202,3 @@ print("Сума до оплати:", round(total, 2), "$")
 print("Загальна знижка:", discount_percent, "%")
 if free_drink:
     print("Бонус: безкоштовний напій (Чай)")
-
