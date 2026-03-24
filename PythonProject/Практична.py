@@ -1,4 +1,4 @@
-from typing import Literal, Optional
+from typing import Literal
 
 # Тип для символів на сітці
 CROSS = "X"
@@ -39,7 +39,9 @@ def print_grid(grid: list[list[Cell]]) -> None:
 
     for i in range(size):
         # Виводимо рядок з клітинками (порожні клітинки показуємо як пробіл)
-        print(" " + " | ".join(cell if cell != EMPTY else " " for cell in grid[i]) + " ")
+        print(
+            " " + " | ".join(cell if cell != EMPTY else " " for cell in grid[i]) + " "
+        )
 
         # Виводимо роздільник (крім останнього рядка)
         if i < size - 1:
@@ -47,10 +49,7 @@ def print_grid(grid: list[list[Cell]]) -> None:
 
 
 def add_symbol_to_grid(
-    grid: list[list[Cell]],
-    row: int,
-    col: int,
-    symbol: Symbol
+    grid: list[list[Cell]], row: int, col: int, symbol: Symbol
 ) -> bool:
     """
     Додає новий символ на сітку за вказаними координатами.
@@ -96,8 +95,8 @@ def ask_user_move(player_name: str, grid: list[list[Cell]]) -> tuple[int, int]:
         try:
             print(f"{player_name}, введіть координати (рядок і стовпчик):")
 
-            row = int(input("Рядок (0 - {}): ".format(size - 1)))
-            col = int(input("Стовпчик (0 - {}): ".format(size - 1)))
+            row = int(input(f"Рядок (0 - {size - 1}): "))
+            col = int(input(f"Стовпчик (0 - {size - 1}): "))
 
             # Перевірка меж
             if row < 0 or row >= size or col < 0 or col >= size:
@@ -116,7 +115,7 @@ def ask_user_move(player_name: str, grid: list[list[Cell]]) -> tuple[int, int]:
             print("Введіть, будь ласка, саме числа.")
 
 
-def check_winner(grid: list[list[Cell]]) -> Optional[Symbol]:
+def check_winner(grid: list[list[Cell]]) -> Symbol | None:
     """
     Перевіряє, чи є переможець на поточній сітці.
 

@@ -38,6 +38,7 @@ print("Максимальне значення:", max_value)
 # порахувати кількість нулів. Результати вивести на екран.
 
 import random
+
 n = int(input("Введіть кількість елементів списку: "))
 numbers = [random.randint(-50, 50) for _ in range(n)]
 print("Список:", numbers)
@@ -78,17 +79,17 @@ print("Результат:", result)
 # Арифметичний вираз може складатися тільки з трьох частин: число, операція, число. Можливі операції: +, -, *, /.
 
 expr = input("Введіть арифметичний вираз (наприклад 23+12): ")
-if '+' in expr:
-    num1, num2 = expr.split('+')
+if "+" in expr:
+    num1, num2 = expr.split("+")
     result = int(num1) + int(num2)
-elif '-' in expr:
-    num1, num2 = expr.split('-')
+elif "-" in expr:
+    num1, num2 = expr.split("-")
     result = int(num1) - int(num2)
-elif '*' in expr:
-    num1, num2 = expr.split('*')
+elif "*" in expr:
+    num1, num2 = expr.split("*")
     result = int(num1) * int(num2)
-elif '/' in expr:
-    num1, num2 = expr.split('/')
+elif "/" in expr:
+    num1, num2 = expr.split("/")
     result = int(num1) / int(num2)
 else:
     result = None

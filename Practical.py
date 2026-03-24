@@ -30,6 +30,7 @@ print("Усі числа:", all_numbers)
 
 guests_list = ["Оля", "Іван", "Марія", "Оля", "Іван"]
 
+
 def send_invitations(guests: list[str], event_name: str) -> None:
     """
     Виводить запрошення для кожного гостя лише один раз.
@@ -42,11 +43,13 @@ def send_invitations(guests: list[str], event_name: str) -> None:
     for guest in unique_guests:
         print(f"Шановний(а) {guest}, запрошуємо Вас на подію '{event_name}'!")
 
+
 send_invitations(guests_list, "День народження")
 
 
 person1 = ["молоко", "хліб", "яйця", "сир"]
 person2 = ["хліб", "масло", "яйця", "кава"]
+
 
 def compare_shopping_lists(list1: list[str], list2: list[str]) -> None:
     """
@@ -70,6 +73,7 @@ def compare_shopping_lists(list1: list[str], list2: list[str]) -> None:
     print("Товари, які потрібні лише першій людині:", only_first)
     print("Товари, які потрібні лише другій людині:", only_second)
 
+
 compare_shopping_lists(person1, person2)
 
 
@@ -77,9 +81,10 @@ registered = ["Оля", "Іван", "Марія", "Андрій"]
 paid = ["Іван", "Марія", "Петро"]
 confirmed = ["Марія", "Іван", "Сергій"]
 
-def analyze_participants(registered: list[str],
-                         paid: list[str],
-                         confirmed: list[str]) -> None:
+
+def analyze_participants(
+    registered: list[str], paid: list[str], confirmed: list[str]
+) -> None:
     """
     Аналізує списки учасників конференції та виводить інформацію:
 
@@ -113,6 +118,5 @@ def analyze_participants(registered: list[str],
     print("Зареєструвались і оплатили:", registered_and_paid)
     print("Пройшли всі 3 етапи:", all_three)
 
+
 analyze_participants(registered, paid, confirmed)
-
-

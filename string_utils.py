@@ -55,4 +55,3 @@ def is_palindrome(text: str) -> bool:
 
     # Перевірка через зріз
     return cleaned == cleaned[::-1]
-

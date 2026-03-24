@@ -1,7 +1,7 @@
 # Є текстовий файл. Виведіть кількість рядків та кількість
 # символів в ньому
 
-with open("input.txt", "r", encoding="utf-8") as file:
+with open("input.txt", encoding="utf-8") as file:
     lines = file.readlines()
 
 line_count = len(lines)
@@ -19,7 +19,7 @@ age = int(input("Enter age:"))
 filename = input("Enter file name:")
 age_str = str(age)
 
-with open(filename + ".txt", "w", encoding= "utf-8") as f:
+with open(filename + ".txt", "w", encoding="utf-8") as f:
     f.write(name)
     f.write("\n")
     f.write(age_str)
@@ -27,7 +27,7 @@ with open(filename + ".txt", "w", encoding= "utf-8") as f:
 
 # Є текстовий файл. Запишіть його рядки в інший файл.
 
-with open("input.txt", "r", encoding="utf-8") as f1:
+with open("input.txt", encoding="utf-8") as f1:
     with open("output.txt", "w", encoding="utf-8") as f2:
         for line in f1:
             f2.write(line)
@@ -39,7 +39,7 @@ with open("input.txt", "r", encoding="utf-8") as f1:
 letter = input("Введіть літеру: ").lower()
 filename = input("Введіть назву файлу (з .txt): ")
 
-with open(filename, "r", encoding="utf-8") as file:
+with open(filename, encoding="utf-8") as file:
     text = file.read()
 
 words = text.split()
@@ -50,4 +50,3 @@ for word in words:
 
 # Є текстовий файл. Замініть у ньому усі символи * на &, та
 # навпаки.
-

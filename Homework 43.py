@@ -1,10 +1,6 @@
 # Завдання 1
 
-rates = {
-    "грн": 1,
-    "долар": 40,
-    "євро": 42
-}
+rates = {"грн": 1, "долар": 40, "євро": 42}
 
 
 from_currency = input("З якої валюти: ")
@@ -12,9 +8,7 @@ amount = float(input("Сума: "))
 to_currency = input("В яку валюту: ")
 
 if from_currency in rates and to_currency in rates:
-
     uah = amount * rates[from_currency]
-
 
     result = uah / rates[to_currency]
 
@@ -24,6 +18,7 @@ else:
 
 
 # Завдання 2
+
 
 def analyze_workers(office: set, remote: set):
     """

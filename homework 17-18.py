@@ -3,7 +3,7 @@
 
 text = "Привіт! Як справи? Сьогодні гарна погода."
 
-sentences = text.count('.') + text.count('!') + text.count('?')
+sentences = text.count(".") + text.count("!") + text.count("?")
 
 print(sentences)
 
@@ -48,7 +48,7 @@ char2 = input("Введіть другий символ: ")
 index1 = text.find(char1)
 index2 = text.find(char2)
 if index1 != -1 and index2 != -1 and index1 < index2:
-    result = text[:index1] + text[index2 + 1:]
+    result = text[:index1] + text[index2 + 1 :]
 else:
     result = text
 print("Результат:", result)

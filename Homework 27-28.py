@@ -1,9 +1,11 @@
 # Завдання 1:
 
+
 def sum_digits(n):
     if n < 10:
         return n
     return n % 10 + sum_digits(n // 10)
+
 
 num = int(input("Введіть число: "))
 print("Сума цифр:", sum_digits(num))
@@ -11,8 +13,8 @@ print("Сума цифр:", sum_digits(num))
 
 # Завдання 2:
 
-def is_symmetric(lst, l, r):
 
+def is_symmetric(lst, l, r):
     if l >= r:
         return True
 
@@ -33,6 +35,7 @@ else:
 
 import random
 
+
 def count_bulls_cows(secret, guess):
     bulls = 0
     cows = 0
@@ -43,6 +46,7 @@ def count_bulls_cows(secret, guess):
         elif guess[i] in secret:
             cows += 1
     return bulls, cows
+
 
 def play(secret, attempts=0):
     guess = input("Введи 4-цифрове число: ")
@@ -61,6 +65,7 @@ def play(secret, attempts=0):
         return
     else:
         play(secret, attempts)
+
 
 secret_number = "".join([str(random.randint(0, 9)) for _ in range(4)])
 

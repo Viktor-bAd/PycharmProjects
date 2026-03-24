@@ -1,12 +1,7 @@
 import math
 
 
-def temperature(
-    T_env: float,
-    T0: float,
-    t: float,
-    k: float = 0.05
-) -> float:
+def temperature(T_env: float, T0: float, t: float, k: float = 0.05) -> float:
     """
     Обчислює температуру води через t секунд
     за законом охолодження Ньютона.
@@ -19,7 +14,8 @@ def temperature(
     """
     return T_env + (T0 - T_env) * math.exp(-k * t)
 
-#Приклад використання
+
+# Приклад використання
 result = temperature(T_env=4, T0=25, t=60)
 print(f"Температура через 60 секунд: {result:.2f} °C")
 
@@ -46,7 +42,8 @@ def get_name(show_time: bool = False) -> str:
 
     return name
 
-#Приклад використання
+
+# Приклад використання
 user_name = get_name(show_time=True)
 print("Привіт,", user_name)
 
@@ -71,5 +68,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-

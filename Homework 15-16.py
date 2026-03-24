@@ -33,6 +33,7 @@ for row in range(height):
 # Кількість цифр, які є в числі, але стоять не на своїх місцях (корови).
 
 import random
+
 secret = str(random.randint(1000, 9999))
 while True:
     guess = input("\nВведіть 4 цифри: ")
@@ -41,7 +42,7 @@ while True:
         break
     bulls = 0
     cows = 0
-    for s, g in zip(secret, guess):
+    for s, g in zip(secret, guess, strict=False):
         if s == g:
             bulls = bulls + 1
     for char in guess:
@@ -64,7 +65,7 @@ for char in number_str:
 total_sum = 0
 for char in number_str:
     digit = int(char)
-    total_sum = total_sum + (digit ** count)
+    total_sum = total_sum + (digit**count)
 if total_sum == int(number_str):
     print("Це число Армстронга!")
 else:

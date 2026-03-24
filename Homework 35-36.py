@@ -33,6 +33,6 @@ t1 = (1, 2, 3, 4, 5)
 t2 = (1, 7, 3, 9, 5)
 t3 = (1, 2, 3, 4, 0)
 
-result = tuple(a for a, b, c in zip(t1, t2, t3) if a == b == c)
+result = tuple(a for a, b, c in zip(t1, t2, t3, strict=False) if a == b == c)
 
 print(result)

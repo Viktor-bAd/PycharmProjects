@@ -1,4 +1,3 @@
-
 def deposit(bank: dict):
     """
     Поповнення рахунку.
@@ -56,7 +55,6 @@ def main():
             break
         else:
             print("Невірний вибір.")
-
 
 
 main()

@@ -11,9 +11,9 @@
 # Прибуття: 01:55
 # Діб пройшло: 0 (бо менше 24 год)
 
-h=int(input("Enter Hours:"))
-m=int(input("Enter Minutes:"))
-t=int(input("Enter Times:"))
+h = int(input("Enter Hours:"))
+m = int(input("Enter Minutes:"))
+t = int(input("Enter Times:"))
 start_minutes = h * 60 + m
 total = start_minutes + t
 
@@ -24,7 +24,7 @@ hh = arrival // 6010
 mm = arrival % 60
 
 print("arrival: " f"{hh:02d}:{mm:02d}")
-print("days:",days)
+print("days:", days)
 
 
 # Завдання 2:
@@ -45,7 +45,7 @@ print(b)
 print(c)
 print(d)
 print("Sum:", a + b + c + d)
-print("Revers:",d * 1000 + c * 100 + b * 10 + a )
+print("Revers:", d * 1000 + c * 100 + b * 10 + a)
 print("first two=", a * 10 + b)
 print("last_two=", c * 10 + d)
 
