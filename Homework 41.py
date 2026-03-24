@@ -1,7 +1,7 @@
 # Завдання 1
 
 products = input("Введіть товари через кому: ")
-product_list = [p.strip() for p in products.split(',')]
+product_list = [p.strip() for p in products.split(",")]
 unique_list = list(set(product_list))
 
 print(unique_list)
@@ -33,5 +33,6 @@ def analyze_coupons(received: list, used: list):
     fraudsters = used_set - received_set
     print(f"Шахраї (скористались без купона): {list(fraudsters)}")
     print(f"Кількість: {len(fraudsters)}")
+
 
 analyze_coupons(received, used)

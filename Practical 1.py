@@ -1,6 +1,6 @@
-
 dict1 = {"яблука": 3, "банани": 2}
 dict2 = {"банани": 4, "апельсини": 5}
+
 
 def merge_dicts(dict1: dict, dict2: dict) -> dict:
     """
@@ -28,14 +28,12 @@ def merge_dicts(dict1: dict, dict2: dict) -> dict:
 
     return result
 
+
 print(merge_dicts(dict1, dict2))
 
 
-data = {
-    "apple": 1,
-    "banana": 2,
-    "orange": 3
-}
+data = {"apple": 1, "banana": 2, "orange": 3}
+
 
 def invert_dict(dict3: dict) -> dict:
     """
@@ -52,6 +50,7 @@ def invert_dict(dict3: dict) -> dict:
         result[value] = key
 
     return result
+
 
 print(invert_dict(data))
 
@@ -98,10 +97,12 @@ def products_prices():
     print("----------------")
     print("Загальна ціна:", total)
 
+
 products_prices()
 
 
 text = "Apple banana apple Orange banana apple"
+
 
 def word_count(text: str, as_frequency: bool = False) -> dict:
     """
@@ -128,6 +129,7 @@ def word_count(text: str, as_frequency: bool = False) -> dict:
             counts[word] = int((counts[word] / total_words) * 100)
 
     return counts
+
 
 # Кількість повторів
 print(word_count(text))

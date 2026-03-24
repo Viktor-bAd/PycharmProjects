@@ -1,4 +1,4 @@
-#Завдання 1
+# Завдання 1
 
 cities = ("Київ", "Одеса", "Львів", "Київ", "Харків", "Одеса")
 
@@ -11,7 +11,7 @@ for city in cities:
 print(duplicates)
 
 
-#Завдання 2
+# Завдання 2
 
 t1 = (1, 2, 3, 4, 5, 6)
 t2 = (4, 5, 6, 7, 8)
@@ -19,10 +19,11 @@ t2 = (4, 5, 6, 7, 8)
 print(tuple(set(t1) - set(t2)))
 
 
-#Завдання 3
+# Завдання 3
 
 t1 = (1, 2, 3, 4, 5)
 t2 = (1, 9, 3, 8, 5)
+
 
 def same_index_elements(t1: tuple, t2: tuple) -> list:
     """
@@ -35,10 +36,11 @@ def same_index_elements(t1: tuple, t2: tuple) -> list:
     """
     result = []
 
-    for a, b in zip(t1, t2):
+    for a, b in zip(t1, t2, strict=False):
         if a == b:
             result.append(a)
 
     return result
+
 
 print(same_index_elements(t1, t2))
