@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Олександр",
+    "specialization": "Python Developer",
+    "grades": [
+      95,
+      88
+    ]
+  },
+  {
+    "name": "Марія",
+    "specialization": "Data Science",
+    "grades": [
+      100,
+      92
+    ]
+  },
+  {
+    "name": "Іван",
+    "specialization": "Cybersecurity",
+    "grades": [
+      85,
+      70
+    ]
+  }
+]
