@@ -147,23 +147,7 @@ for s in loaded_json_students:
     s.show_info()
 
 
-# Реалізуйте телефонну книгу.
-# Контакт містить:
-# ім’я
-# телефон
-# email
-# Функціонал:
-# додати контакт
-# видалити контакт
-# знайти контакт за ім’ям
-# показати всі контакти
-# зберегти/завантажити через json
-# зберегти/завантажити через pickle
-# Віктор: {phone: 0935075803
-#          email: viktor.bad@gmail.com}
-#
-# Оксана: {phone: 0930772315
-#          email: oksana@gmail.com}
+
 import json
 
 JSON_FILE = "book.json"
