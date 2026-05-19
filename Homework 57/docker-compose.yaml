@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  app1:
+    build: ../docker_random_line
+    image: rand-line
+    environment:
+      SYMBOL: "*"
+      MIN_LEN: 3
+      MAX_LEN: 10
+      DELAY: 1
+
+  app2:
+    build: ../docker_random_line
+    image: rand-line
+    environment:
+      SYMBOL: "#"
+      MIN_LEN: 5
+      MAX_LEN: 15
+      DELAY: 2
+
+  app3:
+    build: ../docker_random_line
+    image: rand-line
+    environment:
+      SYMBOL: "@"
+      MIN_LEN: 2
+      MAX_LEN: 8
+      DELAY: 3
