@@ -1,0 +1,15 @@
+
+
+fastai==2.8.7
+fastapi==0.136.1
+fastcore==1.12.44
+fastdownload==0.0.7
+fastlite==0.2.4
+matplotlib==3.10.9
+pydantic==2.13.4
+pydantic-settings==2.14.1
+pydantic_core==2.46.4
+requests==2.33.1
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+uvicorn==0.46.0
