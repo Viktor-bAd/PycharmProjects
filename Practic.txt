@@ -1,0 +1,112 @@
+Last login: Tue Jun  9 19:04:08 on ttys001
+macbook@MacBook-Pro-Macbook ~ % redis-cli
+127.0.0.1:6379> set name John doe
+(error) ERR syntax error
+127.0.0.1:6379> set name John_doe
+OK
+127.0.0.1:6379> set name 'John Doe'
+OK
+127.0.0.1:6379> get name
+"John Doe"
+127.0.0.1:6379> rpush fruits "apple" "banana" "orange"
+(integer) 3
+127.0.0.1:6379> lrange fruits 0 -1
+1) "apple"
+2) "banana"
+3) "orange"
+127.0.0.1:6379> hmset user:1 name Alice
+OK
+127.0.0.1:6379> hmset user:1 age 25
+OK
+127.0.0.1:6379> hmgetall
+(error) ERR unknown command 'hmgetall'
+127.0.0.1:6379> hmgetall user:1
+(error) ERR unknown command 'hmgetall', with args beginning with: 'user:1'
+127.0.0.1:6379> hgetall user:1
+1) "name"
+2) "Alice"
+3) "age"
+4) "25"
+127.0.0.1:6379> sadd tags "red" "green" "blue"
+(integer) 3
+127.0.0.1:6379> smembers tags
+1) "red"
+2) "green"
+3) "blue"
+127.0.0.1:6379> incr counter
+(integer) 1
+127.0.0.1:6379> get counter
+"1"
+127.0.0.1:6379> incr counter
+(integer) 2
+127.0.0.1:6379> incr counter
+(integer) 3
+127.0.0.1:6379> get counter
+"3"
+127.0.0.1:6379> del user:1 name
+(integer) 2
+127.0.0.1:6379> sgetall user:1
+(error) ERR unknown command 'sgetall', with args beginning with: 'user:1'
+127.0.0.1:6379> get
+(error) ERR wrong number of arguments for 'get' command
+127.0.0.1:6379> get name
+(nil)
+127.0.0.1:6379> exist name
+(error) ERR unknown command 'exist', with args beginning with: 'name'
+127.0.0.1:6379> exists name
+(integer) 0
+127.0.0.1:6379> exists name
+(integer) 0
+127.0.0.1:6379> exists counter
+(integer) 1
+127.0.0.1:6379> setex message 10 "Hello redis!"
+OK
+127.0.0.1:6379> get messege
+(nil)
+127.0.0.1:6379> get message
+(nil)
+127.0.0.1:6379> setex message 10 "Hello redis!"
+OK
+127.0.0.1:6379> get message
+"Hello redis!"
+127.0.0.1:6379> get message
+(nil)
+127.0.0.1:6379> keys *
+1) "tags"
+2) "counter"
+3) "age"
+4) "num"
+5) "fruits"
+127.0.0.1:6379> flushall
+OK
+127.0.0.1:6379> keys *
+(empty array)
+127.0.0.1:6379> geoadd geo_location 46.48 30.43 Odesa
+(integer) 1
+127.0.0.1:6379> keys *
+1) "geo_location"
+127.0.0.1:6379> geoadd geo_location 50.45 30.52 Kyiv
+(integer) 1
+127.0.0.1:6379> geodistance
+(error) ERR unknown command 'geodistance'
+127.0.0.1:6379> geodist
+(error) ERR wrong number of arguments for 'geodist' command
+127.0.0.1:6379> geodist geo_location Odesa Kyiv km
+"380.6781"
+127.0.0.1:6379> set Students:viktor 50
+OK
+127.0.0.1:6379> set Students:anna 47
+OK
+127.0.0.1:6379> set Students:Jhon 58
+OK
+127.0.0.1:6379> get Students
+(nil)
+127.0.0.1:6379> get Students:viktor
+"50"
+127.0.0.1:6379> keys Students:*
+1) "Students:Jhon"
+2) "Students:anna"
+3) "Students:viktor"
+127.0.0.1:6379> flushall
+OK
+127.0.0.1:6379>
